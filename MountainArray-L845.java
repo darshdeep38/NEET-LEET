@@ -20,5 +20,5 @@ class Solution {
 
 
 //find the peak and run pointer on both side
-//time o(n)
+//time o(n2)
 //space o(1)
