@@ -1,0 +1,21 @@
+class Solution {
+    public long zeroFilledSubarray(int[] nums) {
+        long streak =0;
+        long totalSubArrays = 0;
+        for(long e : nums)
+        {
+            if(e == 0)
+            {
+                streak +=1;
+                totalSubArrays += streak;
+            }
+            else
+                streak = 0;
+        }
+        return totalSubArrays;
+    }
+}
+
+
+
+//there is another solution with a formula , same complexity though
