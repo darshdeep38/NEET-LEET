@@ -28,3 +28,4 @@ class Solution {
 
 
 //simple iteration
+//avoiding double to int conversions by not calculating the actual diagonal
