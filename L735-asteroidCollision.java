@@ -33,13 +33,16 @@ class Solution {
 }
 
 //just simulate
-//Here is the  C++ code :-
 
+//here is the c++ code buddy
+
+#include <vector>
+#include <stack>
+using namespace std;
 class Solution {
 public:
     vector<int> asteroidCollision(vector<int>& asteroids) {
         stack<int> stk;
-
         for (int i : asteroids) {
             while (i < 0 && !stk.empty() && stk.top() > 0) {
                 int difference = stk.top() + i;
@@ -55,6 +58,23 @@ public:
 
             if (i != 0) {
                 stk.push(i);
+        for (int a : asteroids) {
+            bool destroyed = false;
+            while (!stk.empty() && a < 0 && stk.top() > 0) {
+                int diff = stk.top() + a;
+                if (diff > 0) {
+                    destroyed = true;
+                    break;
+                } else if (diff < 0) {
+                    stk.pop();
+                } else {
+                    stk.pop();
+                    destroyed = true;
+                    break;
+                }
+            }
+            if (!destroyed) {
+                stk.push(a);
             }
         }
 
@@ -67,3 +87,4 @@ public:
         return result;
     }
 };
+
